@@ -68,23 +68,23 @@ switch(variant){
     case 5:
         console.log("Выбрана задача 5")
         let h = 3;
-        let ans = prompt("Введите число",'');
+        let ans = +prompt("Введите число",'');
 
         if(isNaN(ans)){
             console.log("Вы ввели не число, повезет в след раз");
             break;
         }
 
-        while (+ans!==h) {
+        while (ans!==h) {
 
-            if (+ans>h){
+            if (ans>h){
                 console.log("ваше число больше");
             }
-            else if (+ans<h){
+            else if (ans<h){
                 console.log("ваше число меньше");
             }
 
-            ans = prompt("Введите число",'');
+            ans = +prompt("Введите число",'');
         }  
         console.log("угадано");
 
