@@ -1,12 +1,12 @@
-const variant = prompt('Выберите задачу от 1 до 7', '');
+const variant = +prompt('Выберите задачу от 1 до 7', '');
 
-switch(+variant){
+switch(variant){
     case 1:
         let speed1 = 72;
         let speed2 = 100;
         console.log('Выбрана задача 1');
-        console.log(` ${+speed1} км/ч соответствует ${+speed1/3.6} м/с`)
-        console.log(`${+speed2} м/с соответствует ${+speed2*3.6} км/ч`)
+        console.log(`${speed1} км/ч соответствует ${speed1/3.6} м/с`)
+        console.log(`${speed2} м/с соответствует ${speed2*3.6} км/ч`)
         break;
         
     case 2:
@@ -15,18 +15,12 @@ switch(+variant){
         let b = 4;
         let c = 5;  
 
-        if (a+b>c){
-            if (a+c>b){
-                if (b+c>a){
+        if (a+b>c && a+c>b && b+c>a){
                     console.log("Треугольник существует")
                     let p = (a+b+c)/2;
-                    console.log(`Периметр равен ${+p*2}`);
-                    console.log(`Площадь равна ${Math.sqrt(+p*(p-a)*(p-b)*(p-c))}`)
-                    console.log(`Соотношение равно ${(+p*2)/Math.sqrt(+p*(p-a)*(p-b)*(p-c))}`)
-                }
-                else console.log("Треугольник не существует")
-            }
-            else console.log("Треугольник не существует")
+                    console.log(`Периметр равен ${p*2}`);
+                    console.log(`Площадь равна ${Math.sqrt(p*(p-a)*(p-b)*(p-c))}`)
+                    console.log(`Соотношение равно ${(p*2)/Math.sqrt(+p*(p-a)*(p-b)*(p-c))}`)
         }
         else console.log("Треугольник не существует")
 
@@ -34,20 +28,20 @@ switch(+variant){
 
     case 3:
         console.log('Выбрана задача 3');
-        let numb = prompt("Введите число",'');
+        let numb = +prompt("Введите число",'');
         if (!isNaN(numb)){
-        for (let i = 0; i<(+numb)+1; i++){
+        for (let i = 0; i<(numb)+1; i++){
 
-            if (+i%5==0 && i!==0){
-                console.log(`${+i} fizz buzz`)
+            if (i%5==0 && i!==0){
+                console.log(`${i} fizz buzz`)
             }
 
-            else if (+i%2==0){
-                console.log(`${+i} buzz`)
+            else if (i%2==0){
+                console.log(`${i} buzz`)
             }
 
-            else if (+i%2!==0){
-                console.log(`${+i} fizz`)
+            else if (i%2!==0){
+                console.log(`${i} fizz`)
             }
         }
     }
@@ -98,11 +92,11 @@ switch(+variant){
 
     case 6:
         console.log('Выбрана задача 6');
-        let n = prompt("Введите число", '');
+        let n = +prompt("Введите число", '');
         let x = 2;
         let y = 6;
 
-        if (+n%x==0 && +n%y==0){
+        if (n%x===0 && n%y===0){
             console.log(`n = ${n}, x = ${x}, y = ${y} => true`)
         }
         else {
