@@ -2,12 +2,24 @@ const variant = +prompt('Выберите задачу от 1 до 7', '');
 
 switch(variant){
     case 1:
-        let speed1 = 72;
-        let speed2 = 100;
-        console.log('Выбрана задача 1');
-        console.log(`${speed1} км/ч соответствует ${speed1/3.6} м/с`)
-        console.log(`${speed2} м/с соответствует ${speed2*3.6} км/ч`)
-        break;
+
+    console.log('Выбрана задача 1');
+    function convertSpeed(speed, dir){
+        speed = +prompt("Введите скорость", '')
+        dir = +prompt("Во что перевести: 1 - в м/с; 2 - в км/ч", '')
+
+        if (dir === 1){
+            dir = 'toMS';
+            return console.log(`convertSpeed(${speed},${dir}) -> '${speed = speed/3.6} м/с'`)
+        }
+        else {
+            dir = 'toKMH';
+            return console.log(`convertSpeed(${speed},${dir}) -> '${speed*3.6} км/ч'`)
+        }
+    }
+    convertSpeed();
+
+       break;
         
     case 2:
         console.log('Выбрана задача 2');
