@@ -53,10 +53,8 @@ switch (variant) {
 			`Студент ${student.first_name} ${student.last_name} учится в группе ${student.group} `
 		);
 
-		let objKeys = Object.keys(student);
-		console.log(
-			`Список свойств: ${objKeys[0]}, ${objKeys[1]}, ${objKeys[2]} `
-		);
+		let objKeys = Object.keys(student).join(" ,");
+		console.log("Список свойств:", Object.keys(student).join(", "));
 
 		break;
 
