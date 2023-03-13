@@ -1,136 +1,115 @@
-const variant = +prompt('Выберите задачу от 1 до 7', '');
+const variant = +prompt("Выберите задачу от 1 до 5", "");
 
-switch(variant){
-    case 1:
+switch (variant) {
+	case 1:
+		console.log("Выбрана задача 1");
 
-    console.log('Выбрана задача 1');
-    function convertSpeed(speed, dir){
-        speed = +prompt("Введите скорость", '')
-        dir = +prompt("Во что перевести: 1 - в м/с; 2 - в км/ч", '')
+		function convertSpeed(speed, dir) {
+			if (dir == 1) {
+				return speed / 3.6;
+			} else {
+				return speed * 3.6;
+			}
+		}
 
-        if (dir === 1){
-            dir = 'toMS';
-            return console.log(`convertSpeed(${speed},${dir}) -> '${speed = speed/3.6} м/с'`)
-        }
-        else {
-            dir = 'toKMH';
-            return console.log(`convertSpeed(${speed},${dir}) -> '${speed*3.6} км/ч'`)
-        }
-    }
-    convertSpeed();
+		let a = +prompt("Введите скорость", "");
+		let b = +prompt("Во что перевести: 1 - в м/с; 2 - в км/ч", "");
 
-       break;
-        
-    case 2:
-        console.log('Выбрана задача 2');
-        let a = 3;
-        let b = 4;
-        let c = 5;  
+		res = convertSpeed(a, b);
+		if (b == 1) {
+			console.log(`convertSpeed(${a}, 'toMS') -> '${res} м/с'`);
+		} else if (b === 2) {
+			console.log(`convertSpeed(${a}, 'toKMH') -> '${res} км/ч'`);
+		}
 
-        if (a+b>c && a+c>b && b+c>a){
-                    console.log("Треугольник существует")
-                    let p = (a+b+c)/2;
-                    console.log(`Периметр равен ${p*2}`);
-                    console.log(`Площадь равна ${Math.sqrt(p*(p-a)*(p-b)*(p-c))}`)
-                    console.log(`Соотношение равно ${(p*2)/Math.sqrt(+p*(p-a)*(p-b)*(p-c))}`)
-        }
-        else console.log("Треугольник не существует")
+		break;
 
-        break;
+	case 2:
+		console.log("Выбрана задача 2");
 
-    case 3:
-        console.log('Выбрана задача 3');
-        let numb = +prompt("Введите число",'');
-        if (!isNaN(numb)){
-        for (let i = 0; i<(numb)+1; i++){
+		function absValue(num) {
+			return Math.pow(Math.pow(num, 2), 1 / 2);
+		}
+		let c = +prompt("Введите число", "");
+		res1 = absValue(c);
 
-            if (i%5==0 && i!==0){
-                console.log(`${i} fizz buzz`)
-            }
+		console.log(`absValue(${c}) -> ${res1}`);
+		break;
 
-            else if (i%2==0){
-                console.log(`${i} buzz`)
-            }
+	case 3:
+		console.log("Выбрана задача 3");
 
-            else if (i%2!==0){
-                console.log(`${i} fizz`)
-            }
-        }
-    }
-        break;
-    
-    case 4:
-        console.log('Выбрана задача 4');
-        let str = '';
+		let gr = prompt("Введите группу", "");
+		let fname = prompt("Введите имя", "");
+		let lname = prompt("Введите фамилию", "");
 
-        for(i = 1; i <= 18; i++)
-        {
-            if(i % 2 != 0)
-            {
-                str += '\n' + '*'.repeat(i);
-            }else {
-                str += '\n' + '#'.repeat(i);
-            }
-        }
-        str += '\n||';
-        console.log('Выбрана задача 4');
-        console.log(str);
-        break;
-    
-    case 5:
-        console.log("Выбрана задача 5")
-        let h = 3;
-        let ans = +prompt("Введите число",'');
+		let student = {
+			group: gr,
+			last_name: lname,
+			first_name: fname,
+		};
 
-        if(isNaN(ans)){
-            console.log("Вы ввели не число, повезет в след раз");
-            break;
-        }
+		console.log(
+			`Студент ${student.first_name} ${student.last_name} учится в группе ${student.group} `
+		);
 
-        while (ans!==h) {
+		let objKeys = Object.keys(student);
+		console.log(
+			`Список свойств: ${objKeys[0]}, ${objKeys[1]}, ${objKeys[2]} `
+		);
 
-            if (ans>h){
-                console.log("ваше число больше");
-            }
-            else if (ans<h){
-                console.log("ваше число меньше");
-            }
+		break;
 
-            ans = +prompt("Введите число",'');
-        }  
-        console.log("угадано");
+	case 4:
+		console.log("Выбрана задача 4");
 
-        break;
+		let d = +prompt("Введите минимальное число", "");
 
-    case 6:
-        console.log('Выбрана задача 6');
-        let n = +prompt("Введите число", '');
-        let x = 2;
-        let y = 6;
+		if (isNaN(d)) {
+			alert("Вы ввели не число");
+			break;
+		}
 
-        if (n%x===0 && n%y===0){
-            console.log(`n = ${n}, x = ${x}, y = ${y} => true`)
-        }
-        else {
-            console.log(`n = ${n}, x = ${x}, y = ${y} => false`)
-        }
-        break;
+		let e = +prompt("Введите максимальное число", "");
 
-    case 7:
-        console.log('Выбрана задача 7');
-        let month = prompt("Введите число", '')
+		if (isNaN(e)) {
+			alert("Вы ввели не число");
+			break;
+		}
 
-        if (month<=3){
-            console.log(`месяц ${month} => 1 квартал`)
-        }
-        if (month>3 && month<=6){
-            console.log(`месяц ${month} => 2 квартал`)
-        }
-        if (month>6 && month<=9){
-            console.log(`месяц ${month} => 3 квартал`)
-        }
-        if (month>9 && month<=12){
-            console.log(`месяц ${month} => 4 квартал`)
-        }
-        break;
+		if (d >= e) {
+			console.log(
+				`Минимальное число больше максимального, введите число меньше ${e}`
+			);
+			d = +prompt("Введите минимальное число", "");
+		}
+
+		function randomNumber(min, max) {
+			return Math.floor(Math.random() * (max - min)) + min;
+		}
+
+		let res2 = randomNumber(d, e);
+		console.log(`randomNumber(${d}, ${e}) -> ${res2}`);
+		break;
+
+	case 5:
+		console.log("Выбрана задача 5");
+		let arr = [];
+		let l = +prompt("Введите кол-во элементов массива", "");
+		for (let i = 0; i < l; i++) {
+			arr.push(Math.round(Math.random() * 100));
+		}
+
+		let count = +prompt("Введите кол-во элементов для вывода");
+		function randArray(count) {
+			let arr2 = [];
+			for (let j = 0; j < count; j++) {
+				arr2.push(arr[randomNumber(0, arr.length)]);
+			}
+			return arr2;
+		}
+
+		let res3 = randArray(count);
+		console.log(`sampleArray([${arr}], ${count}) -> [${res3}])`);
+		break;
 }
