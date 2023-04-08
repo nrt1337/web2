@@ -1,0 +1,114 @@
+:root {
+	font-size: 62.5%;
+}
+
+h1 {
+	font-size: 4rem;
+}
+.button1 {
+	margin: 40px 0 40px 40px;
+	padding: 6px 16px;
+	background-color: chocolate;
+	border-radius: 5px;
+	border: 0;
+	font-size: 3rem;
+}
+
+.formbutton {
+	padding: 6px 16px;
+	margin: 0 1rem;
+	background-color: chocolate;
+	border-radius: 5px;
+	border: 0;
+	font-size: 2rem;
+}
+
+.errorfield {
+	margin: 2rem;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+* {
+	margin: 0;
+}
+
+button {
+	transition: 0.5s;
+}
+
+button:hover {
+	transform: scale(1.05);
+}
+
+button:active {
+	transform: scale(0.9);
+}
+
+.modal {
+	display: none;
+	position: fixed;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	top: 0;
+	left: 0;
+}
+
+.modal_body {
+	min-height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 30px 10px;
+}
+
+.modal_content {
+	background-color: white;
+	color: black;
+	max-width: 800px;
+	padding: 30px;
+	position: relative;
+}
+
+.modal_close {
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	font-size: 20px;
+	color: black;
+	text-decoration: none;
+}
+
+.modal_title {
+	font-size: 3rem;
+	font-weight: 500;
+	margin-bottom: 1em;
+}
+
+.modal_form {
+	display: flex;
+	flex-direction: column;
+	font-size: 2rem;
+}
+.modal_form label {
+	margin-bottom: 1rem;
+}
+.modal_form input[type="email"],
+input[type="password"] {
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 1.5rem;
+	line-height: 1em;
+}
+
+#pass {
+	display: block;
+	border-radius: 5px;
+	margin-bottom: 1.5rem;
+	line-height: 1em;
+}
